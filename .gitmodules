@@ -1,0 +1,6 @@
+[submodule "libpd"]
+	path = libpd
+	url = https://github.com/libpd/libpd
+[submodule "raygui"]
+	path = raygui
+	url = https://github.com/raysan5/raygui

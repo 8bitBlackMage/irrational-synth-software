@@ -1,0 +1,11 @@
+#N canvas 979 554 2068 1270 12;
+#X obj 1039 594;
+#X obj 327 403 s toCPP;
+#X obj 385 150 loadbang;
+#X obj 534 443 print;
+#X obj 540 291 route control;
+#X msg 385 218 control Slider frequency 0 100 \, control PushButton
+Test1 \, control ToggleButton Test2 on \, ready;
+#X connect 2 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 3 0;
