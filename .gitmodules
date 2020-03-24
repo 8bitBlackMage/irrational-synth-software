@@ -4,3 +4,6 @@
 [submodule "raygui"]
 	path = raygui
 	url = https://github.com/raysan5/raygui
+[submodule "rtaudio"]
+	path = rtaudio
+	url = https://github.com/thestk/rtaudio.git
