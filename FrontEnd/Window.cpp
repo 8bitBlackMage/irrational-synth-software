@@ -5,7 +5,10 @@
 #include "Window.h"
 #include <math.h>
 #define RAYGUI_IMPLEMENTATION
+
+#include "raygui.h"
 #undef RAYGUI_IMPLEMENTATION
+
 Window::Window(int h, int w) {
 InitWindow(h,w,"test");
 }
@@ -13,6 +16,7 @@ InitWindow(h,w,"test");
 void Window::UpdateLoop() {
     BeginDrawing();
     ClearBackground(WHITE);
+
     //     GuiLock();
     for(auto & Panel : m_Drawbuffer)
     {
@@ -56,14 +60,11 @@ void Window::GenerateUI() {
 
 
     int max_Height = 50;
-    int max_Width = 400;
+    int max_Width = 600;
 
     //calculate base panel size
 
-    int num_rows = ceil((float)m_widgets->size() / 3 );
-    int Panel_Width = 600 / m_widgets->size() / num_rows;
-    if(Panel_Width >= max_Width) Panel_Width = max_Width;
-
+    int Panel_Width = 600;
 
 for(auto & widget : *m_widgets)
 {
@@ -78,7 +79,7 @@ for(auto & widget : *m_widgets)
     if(xpos >= 600)
     {
         xpos = 100;
-        ypos+= max_Height;
+        ypos+= max_Height + 10;
     }
     m_Drawbuffer.push_back(tmp);
 }

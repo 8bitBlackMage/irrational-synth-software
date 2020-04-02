@@ -3,7 +3,7 @@
 //
 
 #include "PureData_AudioProcessorDevice.h"
-
+#include "assert.h"
 void PureData_AudioProcessorDevice::ProcessBuffer(void *inputBuffer, void *outputBuffer, unsigned int nFrames) {
     int ticks = nFrames / 64;
     m_lpd.processFloat(ticks, (float*)inputBuffer, (float*)outputBuffer);
@@ -39,7 +39,22 @@ m_pathToPatch(PatchPath){
 }
 
 void PureData_AudioProcessorDevice::UpdateLoop() {
+for(auto & Item : m_receiver.getVector())
+{
+    switch(Item.WidgetType){
+        case(slider):
+        {
 
+         m_lpd.sendFloat(Item.WidgetName, Item.DataFloat);
+         //printf("%f \n", Item.DataFloat);
+        }
+
+        case(toggle):
+        {
+            m_lpd.sendFloat(Item.WidgetName, Item.DataBool);
+        }
+    }
+}
 }
 
 PDObject *PureData_AudioProcessorDevice::GetReciver() {
