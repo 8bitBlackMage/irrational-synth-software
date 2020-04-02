@@ -7,3 +7,6 @@
 [submodule "rtaudio"]
 	path = rtaudio
 	url = https://github.com/thestk/rtaudio.git
+[submodule "raylib"]
+	path = raylib
+	url = https://github.com/raysan5/raylib.git

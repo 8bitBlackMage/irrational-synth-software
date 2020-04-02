@@ -14,13 +14,15 @@ include_directories(
         irrational-synth-software
         ./libpd/* ./libpd/libpd_wrapper ./libpd/libpd_wrapper/util
         ./Backend ./Backend/PureData ./FrontEnd
+        ./raylib/src
         ./raygui/src
         ./rtaudio
+
         )
 
 
 add_subdirectory(rtaudio)
-
+add_subdirectory(raylib)
 add_executable(irrational-synth-software
         main.cpp
         Backend/AudioBackend.cpp
@@ -31,5 +33,5 @@ if(CompilePi)
     target_link_libraries(irrational-synth-software rtaudio -lpd -lraylib  -lbcm_host  -lbrcmGLESv2 -lbrcmEGL -lm -lpthread -ldl -lrt -lX11 -L/opt/vc/lib -L/usr/local/lib)
 else()
     target_link_libraries(
-            irrational-synth-software  rtaudio -lpd -lraylib  -lGL -lm -lpthread -ldl -lrt -lX11)
+            irrational-synth-software  rtaudio -lpd raylib  -lGL -lm -lpthread -ldl -lrt -lX11)
    endif()
