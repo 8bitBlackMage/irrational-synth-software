@@ -21,7 +21,7 @@ class AudioBackend{
     unsigned int m_nBuffers;
     unsigned int m_Device;
     unsigned int m_Channels;
-  //  unsigned int m_BufferFrames = 256;
+
 
 
 public:
@@ -30,8 +30,6 @@ public:
 
     void OpenStream();
 
-
-    unsigned int generateID(std::string name);
 
 
     //delete constructors and copy function to make it a singleton

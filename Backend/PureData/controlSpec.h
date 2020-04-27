@@ -17,7 +17,9 @@ enum WidgetTypeIndex{
 
 
 
-
+//struct for widget data for PD data
+//float values are used for the slider
+//boolean values used for toggle / bang controls.
 struct ControlWidget
 {
 WidgetTypeIndex WidgetType;

@@ -9,7 +9,10 @@
 #include "controlSpec.h"
 #include <vector>
 
-class PDObject : public pd::PdReceiver, public ControlSpec { //, public pd::PdMidiReceiver {
+
+
+//Pure Data message Parsing class
+class PDObject : public pd::PdReceiver, public ControlSpec {
 
 public:
 
@@ -39,6 +42,7 @@ public:
 
 
 private:
+    //storage for control objects
     std::vector<ControlWidget>m_specContainer;
 
 };

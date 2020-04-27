@@ -6,8 +6,7 @@
 #define IRRATIONALBACKEND_WINDOW_H
 
 #include <raylib.h>
-//#define RAYGUI_IMPLEMENTATION
-//#define RAYGUI_SUPPORT_ICONS
+
 #include "ricons.h"
 #undef RAYGUI_IMPLIMENTATION
 #include <vector>
@@ -24,7 +23,7 @@ struct Panel{
 };
 
 
-
+//prototype frontend for testing, will be nixed in future updates and replaced with an OpenGL ES version
 class Window {
     std::vector<ControlWidget> *m_widgets = 0;
     std::vector<Panel> m_Drawbuffer;

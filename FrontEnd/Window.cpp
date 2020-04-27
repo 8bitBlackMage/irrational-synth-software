@@ -8,11 +8,14 @@
 
 #include "raygui.h"
 #undef RAYGUI_IMPLEMENTATION
-
+//standard init function, takes an integer width and height
+//Initialises the Raylib Library and opens a render window for drawing
 Window::Window(int h, int w) {
 InitWindow(h,w,"test");
 }
 
+
+//basic update loop, calls relative drawing functions for RayGui
 void Window::UpdateLoop() {
     BeginDrawing();
     ClearBackground(WHITE);
@@ -50,10 +53,11 @@ void Window::UpdateLoop() {
     EndDrawing();
 }
 
+//getter function to load control spec from backend
 void Window::getWidgets(std::vector<ControlWidget> *widgets) {
 m_widgets = widgets;
 }
-
+//function to programmatically generate the User Interface from Pure Data Patches.
 void Window::GenerateUI() {
     int xpos = 100;
     int ypos = 10;
